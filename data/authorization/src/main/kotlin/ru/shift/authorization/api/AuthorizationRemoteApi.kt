@@ -8,8 +8,9 @@ import retrofit2.http.POST
 import ru.shift.authorization.model.request.ProfileRequest
 import ru.shift.authorization.model.request.SignInRequest
 import ru.shift.authorization.model.response.ProfileResponse
+import ru.shift.remote.api.BaseRemoteApi
 
-interface AuthorizationRemoteApi {
+interface AuthorizationRemoteApi : BaseRemoteApi {
 
     @POST("${API_USERS}/signin")
     suspend fun postSignIn(
