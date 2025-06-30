@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ShiftSummer2025"
+rootProject.name = "Shift Summer 2025"
 include(":app")
  
