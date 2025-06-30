@@ -28,4 +28,9 @@ include(":core:design-system")
 include(":core:data:remote")
 
 include(":data:authorization")
+
+include(":feature:authorization:authorization-api")
+include(":feature:authorization:authorization-data")
+include(":feature:authorization:authorization-domain")
+include(":feature:authorization:authorization-impl")
  

@@ -59,6 +59,11 @@ dependencies {
 
     implementation(project(":core:data:remote"))
 
+    implementation(project(":feature:authorization:authorization-api"))
+    implementation(project(":feature:authorization:authorization-data"))
+    implementation(project(":feature:authorization:authorization-domain"))
+    implementation(project(":feature:authorization:authorization-impl"))
+
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
