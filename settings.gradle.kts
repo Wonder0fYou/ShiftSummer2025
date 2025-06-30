@@ -19,6 +19,11 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ShiftSummer2025"
+rootProject.name = "Shift Summer 2025"
 include(":app")
+
+include(":core:di")
+include(":core:feature-api")
+include(":core:design-system")
+include(":core:data:remote")
  
