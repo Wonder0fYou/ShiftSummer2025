@@ -26,4 +26,6 @@ include(":core:di")
 include(":core:feature-api")
 include(":core:design-system")
 include(":core:data:remote")
+
+include(":data:authorization")
  
