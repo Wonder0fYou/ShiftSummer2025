@@ -1,4 +1,4 @@
-package ru.shiftsummer2025
+package ru.shiftsummer2025.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

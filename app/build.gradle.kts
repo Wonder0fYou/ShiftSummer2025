@@ -57,6 +57,13 @@ dependencies {
     implementation(project(":core:feature-api"))
     implementation(project(":core:di"))
 
+    implementation(project(":core:data:remote"))
+
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
+
+    implementation(libs.androidx.navigation.compose)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
