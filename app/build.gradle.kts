@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.shiftsummer2025"
+    namespace = "ru.shiftsummer2025"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.shiftsummer2025"
+        applicationId = "ru.shiftsummer2025"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

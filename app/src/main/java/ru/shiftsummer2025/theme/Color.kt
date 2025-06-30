@@ -1,4 +1,4 @@
-package com.example.shiftsummer2025.ui.theme
+package ru.shiftsummer2025.theme
 
 import androidx.compose.ui.graphics.Color
 

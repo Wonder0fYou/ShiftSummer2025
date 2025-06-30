@@ -1,4 +1,4 @@
-package com.example.shiftsummer2025
+package ru.shiftsummer2025
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.shiftsummer2025.ui.theme.ShiftSummer2025Theme
+import ru.shiftsummer2025.theme.ShiftSummer2025Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
