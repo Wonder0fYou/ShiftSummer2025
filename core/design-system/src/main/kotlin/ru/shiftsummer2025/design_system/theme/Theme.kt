@@ -1,4 +1,4 @@
-package ru.shiftsummer2025.theme
+package ru.shiftsummer2025.design_system.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

@@ -1,4 +1,4 @@
-package ru.shiftsummer2025.theme
+package ru.shiftsummer2025.design_system.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

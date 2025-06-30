@@ -11,14 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ru.shiftsummer2025.theme.ShiftSummer2025Theme
+import ru.shiftsummer2025.design_system.theme.ShiftSummer2025Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ShiftSummer2025Theme {
+            ru.shiftsummer2025.design_system.theme.ShiftSummer2025Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -41,7 +41,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    ShiftSummer2025Theme {
+    ru.shiftsummer2025.design_system.theme.ShiftSummer2025Theme {
         Greeting("Android")
     }
 }

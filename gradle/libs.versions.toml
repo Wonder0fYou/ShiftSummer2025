@@ -57,6 +57,7 @@ retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", ve
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger2" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger2" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
