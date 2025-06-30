@@ -6,9 +6,9 @@ abstract class BaseComponentHolder<COMPONENT: BaseComponentApi, DEPENDENCIES: Ba
 
     private var component: COMPONENT? = null
 
-    lateinit var dependenciesProvider: Provider<DEPENDENCIES>
+    private lateinit var dependenciesProvider: Provider<DEPENDENCIES>
 
-    abstract fun build(dependencies: DEPENDENCIES): COMPONENT
+    protected abstract fun build(dependencies: DEPENDENCIES): COMPONENT
 
     fun get(): COMPONENT = component ?: build(dependenciesProvider.get())
         .also { newComponent -> component = newComponent }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class ShiftApplication: Application() {
     @Inject
-    lateinit var componentHolderInitializer: ComponentHolderInitializer
+    private lateinit var componentHolderInitializer: ComponentHolderInitializer
 
     val component: AppComponent by lazy {
         DaggerAppComponent.factory().create(this)
