@@ -23,4 +23,5 @@ rootProject.name = "Shift Summer 2025"
 include(":app")
 
 include(":core:di")
+include(":core:feature-api")
  

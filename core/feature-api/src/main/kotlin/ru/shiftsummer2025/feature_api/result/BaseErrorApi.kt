@@ -1,0 +1,3 @@
+package ru.shiftsummer2025.feature_api.result
+
+interface BaseErrorApi
