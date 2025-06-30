@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "ru.shift.authorization_api"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 26
