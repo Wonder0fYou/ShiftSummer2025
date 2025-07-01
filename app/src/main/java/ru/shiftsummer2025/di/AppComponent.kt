@@ -5,14 +5,16 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.shift.di.BaseComponentApi
 import ru.shiftsummer2025.ShiftApplication
-import ru.shiftsummer2025.ui.MainActivity
 import ru.shiftsummer2025.di.module.AppModule
+import ru.shiftsummer2025.di.module.FeatureModule
+import ru.shiftsummer2025.ui.MainActivity
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
         AppModule::class,
+        FeatureModule::class
     ]
 )
 interface AppComponent : BaseComponentApi {
