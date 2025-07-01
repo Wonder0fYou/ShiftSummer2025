@@ -16,7 +16,7 @@ class AuthorizationRouteApiImpl @Inject constructor(): AuthorizationRouteApi {
         modifier: Modifier
     ) {
         navGraphBuilder.navigation<AuthorizationRouteApi.Screen.BASE>(
-            startDestination = AuthorizationRouteApi.Screen.BASE
+            startDestination = AuthorizationRouteApi.Screen.Login
         ) {
             composable<AuthorizationRouteApi.Screen.Login> {
                 AuthLoginScreenController(
