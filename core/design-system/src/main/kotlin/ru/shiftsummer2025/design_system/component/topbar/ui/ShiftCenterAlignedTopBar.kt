@@ -5,12 +5,15 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import ru.shiftsummer2025.design_system.component.text.ShiftText
+import ru.shiftsummer2025.design_system.component.text.TextStyle
 import ru.shiftsummer2025.design_system.component.topbar.model.TopBarConfiguration
 import ru.shiftsummer2025.design_system.theme.ShiftTheme
 
@@ -68,4 +71,16 @@ fun TopBarIcon(
             contentDescription = contentDescription
         )
     }
+}
+
+@Composable
+fun TopBarTitleWithText(
+    modifier: Modifier = Modifier,
+    text: String
+) {
+    ShiftText(
+        modifier = modifier,
+        text = text,
+        textStyle = TextStyle.TITLE_H2
+    )
 }
