@@ -1,0 +1,18 @@
+package ru.shiftsummer2025.di.module.data.datastore
+
+import android.app.Application
+import android.content.Context
+import dagger.Module
+import dagger.Provides
+import ru.shift.data_store.di.DataStoreDependencies
+
+@Module
+class DataStoreComponentModule {
+
+    @Provides
+    fun provideDataStoreDependencies(
+        context: Application
+    ): DataStoreDependencies = object : DataStoreDependencies {
+        override val context: Context = context
+    }
+}

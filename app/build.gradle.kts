@@ -57,6 +57,7 @@ dependencies {
     implementation(project(":core:feature-api"))
     implementation(project(":core:di"))
 
+    implementation(project(":core:data:data-store"))
     implementation(project(":core:data:remote"))
 
     implementation(project(":feature:authorization:authorization-api"))
