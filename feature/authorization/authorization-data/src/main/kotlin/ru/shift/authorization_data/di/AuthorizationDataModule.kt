@@ -21,6 +21,7 @@ class AuthorizationDataModule {
 
     @Module
     interface Binder {
+
         @Binds
         fun bindAuthorizationRepository(impl: AuthorizationRepositoryImpl): AuthorizationRepository
     }

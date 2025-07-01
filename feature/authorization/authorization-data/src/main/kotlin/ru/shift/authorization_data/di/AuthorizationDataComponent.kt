@@ -9,6 +9,7 @@ import ru.shift.di.BaseComponentApi
     dependencies = [AuthorizationDependencies::class]
 )
 interface AuthorizationDataComponent: BaseComponentApi {
+
     fun authorizationRepository(): AuthorizationRepository
 
     @Component.Factory
