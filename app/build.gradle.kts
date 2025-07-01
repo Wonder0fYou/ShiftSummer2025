@@ -53,6 +53,8 @@ android {
 
 dependencies {
 
+    implementation("com.google.protobuf:protobuf-javalite:3.18.0")
+
     implementation(project(":core:design-system"))
     implementation(project(":core:feature-api"))
     implementation(project(":core:di"))

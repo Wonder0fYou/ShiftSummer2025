@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.shift.remote.api.BaseNetworkApi
 import ru.shift.remote.api.BaseRemoteApi
-import ru.shift.remote.di.RemoteModule.Companion.BASE_URL
+import ru.shift.remote.interceptor.AuthInterceptor
 import javax.inject.Singleton
 
 @Module
@@ -19,7 +19,9 @@ class RemoteModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(
+        authInterceptor: AuthInterceptor,
     ): OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(authInterceptor)
         .build()
 
 
