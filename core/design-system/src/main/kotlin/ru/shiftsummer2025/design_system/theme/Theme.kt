@@ -1,57 +1,156 @@
 package ru.shiftsummer2025.design_system.theme
 
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+@Immutable
+data class ShiftColorScheme(
+    // Background
+    val backgroundPrimary: Color,
+    val backgroundSecondary: Color,
+    val backgroundTertiary: Color,
+    val backgroundDisabled: Color,
+
+    // Border
+    val borderExtraLight: Color,
+    val borderLight: Color,
+    val borderMedium: Color,
+
+    // Text
+    val textInvert: Color,
+    val textPrimary: Color,
+    val textSecondary: Color,
+    val textTertiary: Color,
+    val textQuaternary: Color,
+    val textError: Color,
+
+    // Indicator
+    val indicatorWhite: Color,
+    val indicatorLight: Color,
+    val indicatorMedium: Color,
+    val indicatorNormal: Color,
+    val indicatorError: Color,
+    val indicatorAttention: Color,
+    val indicatorPositive: Color,
+
+    // Brand Leasing
+    val brandLeasingPrimary: Color,
+    val brandLeasingPressed: Color,
+    val brandLeasingHover: Color,
+    val brandLeasingExtraLight: Color,
+    val brandLeasingDisabled: Color,
+    val brandLeasingIndicatorFocused: Color,
+    val brandLeasingIndicatorFocusedAlternative: Color
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+private val LightColorScheme = ShiftColorScheme(
+    // Background
+    backgroundPrimary = BG_Primary,
+    backgroundSecondary = BG_Secondary,
+    backgroundTertiary = BG_Tertiary,
+    backgroundDisabled = BG_Disable,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    // Border
+    borderExtraLight = Border_ExtraLight,
+    borderLight = Border_Light,
+    borderMedium = Border_Medium,
+
+    // Text
+    textInvert = Text_Invert,
+    textPrimary = Text_Primary,
+    textSecondary = Text_Secondary,
+    textTertiary = Text_Tertiary,
+    textQuaternary = Text_Quartenery,
+    textError = Text_Error,
+
+    // Indicator
+    indicatorWhite = Indicator_White,
+    indicatorLight = Indicator_Light,
+    indicatorMedium = Indicator_Medium,
+    indicatorNormal = Indicator_Normal,
+    indicatorError = Indicator_Error,
+    indicatorAttention = Indicator_Attention,
+    indicatorPositive = Indicator_Positive,
+
+    // Brand Leasing
+    brandLeasingPrimary = Leasing_Brand,
+    brandLeasingPressed = Leasing_Pressed_Primary,
+    brandLeasingHover = Leasing_Hover_Primary,
+    brandLeasingExtraLight = Leasing_Brand_ExtraLight,
+    brandLeasingDisabled = Leasing_Brand_Disabled,
+    brandLeasingIndicatorFocused = Leasing_Indicator_Focused,
+    brandLeasingIndicatorFocusedAlternative = Leasing_Indicator_Focused_alternative
 )
+
+private val DarkColorScheme = ShiftColorScheme(
+    // Background
+    backgroundPrimary = BG_Primary,
+    backgroundSecondary = BG_Secondary,
+    backgroundTertiary = BG_Tertiary,
+    backgroundDisabled = BG_Disable,
+
+    // Border
+    borderExtraLight = Border_ExtraLight,
+    borderLight = Border_Light,
+    borderMedium = Border_Medium,
+
+    // Text
+    textInvert = Text_Invert,
+    textPrimary = Text_Primary,
+    textSecondary = Text_Secondary,
+    textTertiary = Text_Tertiary,
+    textQuaternary = Text_Quartenery,
+    textError = Text_Error,
+
+    // Indicator
+    indicatorWhite = Indicator_White,
+    indicatorLight = Indicator_Light,
+    indicatorMedium = Indicator_Medium,
+    indicatorNormal = Indicator_Normal,
+    indicatorError = Indicator_Error,
+    indicatorAttention = Indicator_Attention,
+    indicatorPositive = Indicator_Positive,
+
+    // Brand Leasing
+    brandLeasingPrimary = Leasing_Brand,
+    brandLeasingPressed = Leasing_Pressed_Primary,
+    brandLeasingHover = Leasing_Hover_Primary,
+    brandLeasingExtraLight = Leasing_Brand_ExtraLight,
+    brandLeasingDisabled = Leasing_Brand_Disabled,
+    brandLeasingIndicatorFocused = Leasing_Indicator_Focused,
+    brandLeasingIndicatorFocusedAlternative = Leasing_Indicator_Focused_alternative
+)
+
+private val LocalColors = staticCompositionLocalOf { LightColorScheme }
+private val LocalTypography = staticCompositionLocalOf { ShiftTypographySet }
 
 @Composable
 fun ShiftSummer2025Theme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
+    val colors = when {
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+    val typography = ShiftTypographySet
+    CompositionLocalProvider(
+        LocalColors provides colors,
+        LocalTypography provides typography,
         content = content
     )
+}
+
+object ShiftTheme {
+    val colors: ShiftColorScheme
+        @Composable @ReadOnlyComposable
+        get() = LocalColors.current
+    val typography: ShiftTypography
+        @Composable @ReadOnlyComposable
+        get() = LocalTypography.current
 }
