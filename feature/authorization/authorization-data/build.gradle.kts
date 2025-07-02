@@ -35,6 +35,12 @@ android {
 }
 
 dependencies {
+    implementation("com.google.protobuf:protobuf-javalite:3.18.0")
+
+    implementation(project(":data:otps"))
+
+    implementation(project(":core:data:data-store"))
+
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))
     implementation(project(":data:authorization"))

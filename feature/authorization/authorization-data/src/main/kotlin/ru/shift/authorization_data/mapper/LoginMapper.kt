@@ -5,9 +5,11 @@ import com.skydoves.sandwich.mappers.ApiSuccessModelMapper
 import ru.shift.authorization.model.UserInfoDto
 import ru.shift.authorization.model.request.SignInRequest
 import ru.shift.authorization.model.response.ProfileResponse
+import ru.shift.authorization_domain.userModel.OtpPhone
 import ru.shift.authorization_domain.userModel.ProfileInfo
 import ru.shift.authorization_domain.userModel.SignIn
 import ru.shift.authorization_domain.userModel.UserInfo
+import ru.shift.otps.model.request.OtpRequest
 import javax.inject.Inject
 
 class LoginMapper @Inject constructor(
@@ -27,6 +29,10 @@ class LoginMapper @Inject constructor(
     fun mapToSignInRequest(signIn: SignIn): SignInRequest = SignInRequest(
         signIn.phone,
         signIn.code
+    )
+
+    fun mapToOtpRequest(otpPhone: OtpPhone): OtpRequest = OtpRequest(
+        phone = otpPhone.phone
     )
 
     private fun mapToUserInfo(userInfoDto: UserInfoDto): UserInfo = UserInfo(

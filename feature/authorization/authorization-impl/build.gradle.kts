@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:otps"))
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))
     implementation(project(":core:design-system"))

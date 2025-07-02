@@ -15,14 +15,12 @@ import ru.shiftsummer2025.design_system.component.text.ShiftText
 import ru.shiftsummer2025.design_system.component.text.TextStyle
 
 @Composable
-fun AuthLoginScreen(
+fun SendCodeScreen(
     modifier: Modifier = Modifier,
     phone: String,
-    code: String,
     onEditPhoneInput: (String) -> Unit,
-    onEditCodeInput: (String) -> Unit,
-    onLoginClick: () -> Unit,
-    isLoginButtonEnable: Boolean
+    onSendCodeClick: () -> Unit,
+    isSendCodeButtonEnabled: Boolean,
 ) {
     ShiftSurface (
         modifier = modifier
@@ -35,7 +33,7 @@ fun AuthLoginScreen(
             ShiftText(
                 modifier = Modifier
                     .padding(16.dp),
-                text = "Введите проверочный код для входа в личный кабинет",
+                text = "Введите номер телефона для входа в личный кабинет",
                 textStyle = TextStyle.BODY_REGULAR_16
             )
             UiSingleLineInput(
@@ -46,21 +44,13 @@ fun AuthLoginScreen(
             ) {
                 onEditPhoneInput(it)
             }
-            UiSingleLineInput(
-                modifier = Modifier
-                    .padding(bottom = 16.dp),
-                text = code,
-                placeholderText = "Проверочный код"
-            ) {
-                onEditCodeInput(it)
-            }
             UiButton(
                 modifier = Modifier
                     .padding(bottom = 16.dp),
-                textInButton = "Войти",
+                textInButton = "Продолжить",
                 style = UiButtonStyle.PRIMARY,
-                isEnabled = isLoginButtonEnable,
-                onClick = { onLoginClick() }
+                isEnabled = isSendCodeButtonEnabled,
+                onClick = { onSendCodeClick() }
             )
         }
     }

@@ -17,13 +17,13 @@ val ShiftTypographySet = ShiftTypography(
     title_h2 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,
+        fontSize = 32.sp,
         lineHeight = 32.sp
     ),
     button = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,
+        fontSize = 24.sp,
         lineHeight = 24.sp
     ),
     body_regular_16 = TextStyle(

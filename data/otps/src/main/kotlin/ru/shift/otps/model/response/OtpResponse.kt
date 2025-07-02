@@ -8,5 +8,5 @@ data class OtpResponse(
     @SerializedName("reason")
     val reason: String,
     @SerializedName("retryDelay")
-    val retryDelay: Int = 120000
+    val retryDelay: Int
 )

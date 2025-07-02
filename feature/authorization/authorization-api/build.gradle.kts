@@ -34,6 +34,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:otps"))
+
     implementation(project(":feature:authorization:authorization-domain"))
     implementation(project(":core:feature-api"))
     implementation(project(":core:di"))
