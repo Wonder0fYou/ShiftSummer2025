@@ -29,6 +29,7 @@ include(":core:data:remote")
 include(":core:data:data-store")
 
 include(":data:authorization")
+include(":data:otps")
 
 include(":feature:authorization:authorization-api")
 include(":feature:authorization:authorization-data")
