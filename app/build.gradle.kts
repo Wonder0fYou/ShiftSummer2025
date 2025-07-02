@@ -53,11 +53,19 @@ android {
 
 dependencies {
 
+    implementation("com.google.protobuf:protobuf-javalite:3.18.0")
+
     implementation(project(":core:design-system"))
     implementation(project(":core:feature-api"))
     implementation(project(":core:di"))
 
+    implementation(project(":core:data:data-store"))
     implementation(project(":core:data:remote"))
+
+    implementation(project(":feature:authorization:authorization-api"))
+    implementation(project(":feature:authorization:authorization-data"))
+    implementation(project(":feature:authorization:authorization-domain"))
+    implementation(project(":feature:authorization:authorization-impl"))
 
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)

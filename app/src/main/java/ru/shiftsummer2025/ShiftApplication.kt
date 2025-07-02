@@ -3,6 +3,7 @@ package ru.shiftsummer2025
 import android.app.Application
 import ru.shiftsummer2025.di.AppComponent
 import ru.shiftsummer2025.di.ComponentHolderInitializer
+import ru.shiftsummer2025.di.DaggerAppComponent
 import javax.inject.Inject
 
 class ShiftApplication: Application() {

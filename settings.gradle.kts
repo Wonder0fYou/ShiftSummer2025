@@ -26,4 +26,13 @@ include(":core:di")
 include(":core:feature-api")
 include(":core:design-system")
 include(":core:data:remote")
+include(":core:data:data-store")
+
+include(":data:authorization")
+include(":data:otps")
+
+include(":feature:authorization:authorization-api")
+include(":feature:authorization:authorization-data")
+include(":feature:authorization:authorization-domain")
+include(":feature:authorization:authorization-impl")
  
