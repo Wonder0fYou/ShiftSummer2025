@@ -30,6 +30,7 @@ include(":core:data:data-store")
 
 include(":data:authorization")
 include(":data:otps")
+include(":data:cars")
 
 include(":feature:authorization:authorization-api")
 include(":feature:authorization:authorization-data")
