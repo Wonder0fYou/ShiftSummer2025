@@ -17,6 +17,7 @@ import ru.shift.data_store.model.PreferenceKey
 import ru.shift.otps.api.OtpsRemoteApi
 import ru.shift.otps.model.response.OtpResponse
 import ru.shiftsummer2025.feature_api.result.BaseErrorApi
+import ru.shiftsummer2025.feature_api.result.ReasonError
 import ru.shiftsummer2025.feature_api.result.Result
 import javax.inject.Inject
 
@@ -36,18 +37,23 @@ class AuthorizationRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun login(signIn: SignIn): Flow<Result<ProfileInfo, BaseErrorApi>> = flow {
+    override suspend fun login(signIn: SignIn): Flow<Result<ProfileInfo, ReasonError>> = flow {
         val request = loginMapper.mapToSignInRequest(signIn)
         val response = authorizationRemoteApi.postSignIn(request)
-        response.suspendOnSuccess(loginMapper) {
-            baseDataStoreApi.save<UserTokensDao>(PreferenceKey.UserToken) {
-                UserTokensDao.newBuilder()
-                    .setToken(this.token)
-                    .build()
+        response.suspendOnSuccess {
+            if (data.success) {
+                val profileInfo = loginMapper.map(this)
+                baseDataStoreApi.save<UserTokensDao>(PreferenceKey.UserToken) {
+                    UserTokensDao.newBuilder()
+                        .setToken(data.token)
+                        .build()
+                }
+                emit(Result.Success(profileInfo))
+            } else {
+                val error = ReasonError(reason = data.reason)
+                emit(Result.Error(error))
             }
-            emit(Result.Success(this))
         }.suspendOnError {
-
         }
     }
 }

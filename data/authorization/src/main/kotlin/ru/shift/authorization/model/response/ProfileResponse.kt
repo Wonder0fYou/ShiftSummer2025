@@ -7,7 +7,7 @@ data class ProfileResponse(
     @SerializedName("success")
     val success: Boolean,
     @SerializedName("reason")
-    val reason: String,
+    val reason: String?,
     @SerializedName("user")
     val user: UserInfoDto,
     @SerializedName("token")

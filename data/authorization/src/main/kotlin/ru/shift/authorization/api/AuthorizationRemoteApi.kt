@@ -8,6 +8,7 @@ import retrofit2.http.POST
 import ru.shift.authorization.model.request.ProfileRequest
 import ru.shift.authorization.model.request.SignInRequest
 import ru.shift.authorization.model.response.ProfileResponse
+import ru.shift.authorization.model.response.SessionResponse
 import ru.shift.remote.api.BaseRemoteApi
 
 interface AuthorizationRemoteApi : BaseRemoteApi {
@@ -20,10 +21,10 @@ interface AuthorizationRemoteApi : BaseRemoteApi {
     @PATCH("$API_USERS/profile")
     suspend fun patchProfile(
         @Body profileRequest: ProfileRequest
-    ): ApiResponse<ProfileResponse>
+    ): ApiResponse<SessionResponse>
 
     @GET("$API_USERS/session")
-    suspend fun getProfile(): ApiResponse<ProfileResponse>
+    suspend fun getProfile(): ApiResponse<SessionResponse>
 
     companion object {
         private const val API_USERS = "/api/users"
