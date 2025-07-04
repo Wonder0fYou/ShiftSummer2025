@@ -38,6 +38,8 @@ dependencies {
 
     implementation(project(":core:feature-api"))
     implementation(project(":core:di"))
+    implementation(project(":feature:auto:auto-domain"))
+
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
 }
