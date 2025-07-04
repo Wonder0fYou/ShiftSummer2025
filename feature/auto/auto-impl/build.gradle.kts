@@ -36,10 +36,13 @@ android {
 
 dependencies {
     implementation(project(":data:cars"))
+
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))
     implementation(project(":core:design-system"))
     implementation(project(":core:feature-api"))
+
+    implementation(project(":feature:auto:auto-api"))
 
     implementation(libs.androidx.navigation.compose)
 
