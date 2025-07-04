@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import ru.shiftsummer2025.ShiftApplication
+import ru.shiftsummer2025.bottombar.controller.BottomBarNavigationController
 import ru.shiftsummer2025.design_system.component.scaffold.ShiftScaffold
 import ru.shiftsummer2025.design_system.theme.ShiftSummer2025Theme
 import ru.shiftsummer2025.route.AppNavGraph
@@ -30,7 +31,8 @@ class MainActivity : ComponentActivity() {
 
             ShiftSummer2025Theme {
                 ShiftScaffold(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    bottomBar = { BottomBarNavigationController(navController = navController) }
                 ) { innerPadding ->
                     AppNavGraph(
                         navHostController = navController,
