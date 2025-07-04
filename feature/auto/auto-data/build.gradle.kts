@@ -41,6 +41,9 @@ dependencies {
     implementation(project(":core:data:remote"))
     implementation(project(":core:feature-api"))
 
+    implementation(project(":feature:auto:auto-api"))
+    implementation(project(":feature:auto:auto-domain"))
+
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
