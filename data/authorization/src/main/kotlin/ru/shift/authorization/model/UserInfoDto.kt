@@ -6,13 +6,13 @@ data class UserInfoDto(
     @SerializedName("phone")
     val phone: String,
     @SerializedName("firstname")
-    val firstname: String,
+    val firstname: String?,
     @SerializedName("middlename")
-    val middleName: String,
+    val middleName: String?,
     @SerializedName("lastname")
-    val lastname: String,
+    val lastname: String?,
     @SerializedName("email")
-    val email: String,
+    val email: String?,
     @SerializedName("city")
-    val city: String
+    val city: String?
 )

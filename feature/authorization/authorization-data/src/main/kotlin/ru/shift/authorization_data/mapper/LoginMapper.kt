@@ -19,7 +19,7 @@ class LoginMapper @Inject constructor(
         val data = apiSuccessResponse.data
         val result = ProfileInfo(
             success = data.success,
-            reason = data.reason,
+            reason = data.reason ?: "",
             user = mapToUserInfo(data.user),
             token = data.token
         )
@@ -37,10 +37,10 @@ class LoginMapper @Inject constructor(
 
     private fun mapToUserInfo(userInfoDto: UserInfoDto): UserInfo = UserInfo(
         phone = userInfoDto.phone,
-        firstname = userInfoDto.firstname,
-        middleName = userInfoDto.middleName,
-        lastname = userInfoDto.lastname,
-        email = userInfoDto.email,
-        city = userInfoDto.city
+        firstname = userInfoDto.firstname ?: "",
+        middleName = userInfoDto.middleName ?: "",
+        lastname = userInfoDto.lastname ?: "",
+        email = userInfoDto.email ?: "",
+        city = userInfoDto.city ?: ""
     )
 }

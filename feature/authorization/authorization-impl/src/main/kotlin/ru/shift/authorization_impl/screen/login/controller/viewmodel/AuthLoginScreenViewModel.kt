@@ -54,30 +54,30 @@ class AuthLoginScreenViewModel @Inject constructor(
                     is Result.Success -> {
                         onLogin()
                     }
+
+                    is Result.Error -> {
+                        TODO()
+                    }
                 }
             }
         }
     }
 
     fun onPhoneChanged(phone: String) {
-        if (phone.isNotEmpty()) {
-            _authLoginScreenState.update {
-                it.copy(
-                    phone = phone,
-                    isSendCodeButtonEnabled = true
-                )
-            }
+        _authLoginScreenState.update {
+            it.copy(
+                phone = phone,
+                isSendCodeButtonEnabled = true
+            )
         }
     }
 
     fun onOtpCodeChanged(code: String) {
-        if (code.isNotEmpty()) {
-            _authLoginScreenState.update {
-                it.copy(
-                    code = code,
-                    isLoginButtonEnable = true
-                )
-            }
+        _authLoginScreenState.update {
+            it.copy(
+                code = code,
+                isLoginButtonEnable = true
+            )
         }
     }
 }
