@@ -1,5 +1,6 @@
 package ru.shiftsummer2025.design_system.component.button
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -24,6 +25,7 @@ import ru.shiftsummer2025.design_system.theme.ShiftTheme
 enum class UiButtonStyle {
     PRIMARY,
     FILTER,
+    EMPTY,
 }
 
 @Composable
@@ -91,6 +93,28 @@ fun UiButton(
                         textStyle = TextStyle.BUTTON
                     )
                 }
+            }
+
+            UiButtonStyle.EMPTY -> Button(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 56.dp),
+                shape = shape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = ShiftTheme.colors.backgroundPrimary,
+                    contentColor = ShiftTheme.colors.textInvert,
+                    disabledContainerColor = ShiftTheme.colors.backgroundPrimary,
+                    disabledContentColor = ShiftTheme.colors.textInvert
+                ),
+                enabled = isEnabled,
+                onClick = onClick,
+                border = BorderStroke(1.dp, color = ShiftTheme.colors.borderMedium)
+            ) {
+                ShiftText(
+                    text = textInButton,
+                    color = ShiftTheme.colors.textInvert,
+                    textStyle = TextStyle.BUTTON
+                )
             }
         }
         if (underButtonContent != null) {
