@@ -12,7 +12,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
@@ -25,6 +24,7 @@ import ru.shiftsummer2025.design_system.theme.ShiftTheme
 fun UiSingleLineInput(
     modifier: Modifier = Modifier,
     text: String,
+    labelText: String? = null,
     placeholderText: String? = null,
     shape: RoundedCornerShape = RoundedCornerShape(10.dp),
     trailingIconItem: ActionIconItem? = null,
@@ -38,6 +38,13 @@ fun UiSingleLineInput(
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
+        if (labelText != null) {
+            ShiftText(
+                text = labelText,
+                color = ShiftTheme.colors.textPrimary,
+                textStyle = TextStyle.BODY_REGULAR_14
+            )
+        }
         OutlinedTextField(
             modifier = Modifier
                 .fillMaxWidth(),
