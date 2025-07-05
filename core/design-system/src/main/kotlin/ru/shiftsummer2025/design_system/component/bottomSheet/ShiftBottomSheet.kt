@@ -6,6 +6,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SheetState
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import ru.shiftsummer2025.design_system.theme.ShiftTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -18,6 +19,7 @@ fun ShiftBottomSheet(
         onDismissRequest = {
             onDismissRequest()
         },
+        containerColor = ShiftTheme.colors.backgroundPrimary,
         sheetState = sheetState,
         content = content
     )

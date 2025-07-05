@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:authorization"))
 
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))
@@ -42,6 +43,9 @@ dependencies {
     implementation(project(":core:feature-api"))
 
     implementation(project(":feature:profile:profile-api"))
+    implementation(project(":feature:profile:profile-domain"))
+
+    implementation(project(":feature:authorization:authorization-api"))
 
     implementation(libs.androidx.navigation.compose)
 

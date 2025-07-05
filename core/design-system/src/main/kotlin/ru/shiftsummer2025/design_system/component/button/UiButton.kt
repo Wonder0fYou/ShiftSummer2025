@@ -102,9 +102,9 @@ fun UiButton(
                 shape = shape,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = ShiftTheme.colors.backgroundPrimary,
-                    contentColor = ShiftTheme.colors.textInvert,
+                    contentColor = ShiftTheme.colors.textPrimary,
                     disabledContainerColor = ShiftTheme.colors.backgroundPrimary,
-                    disabledContentColor = ShiftTheme.colors.textInvert
+                    disabledContentColor = ShiftTheme.colors.textPrimary
                 ),
                 enabled = isEnabled,
                 onClick = onClick,
@@ -112,7 +112,7 @@ fun UiButton(
             ) {
                 ShiftText(
                     text = textInButton,
-                    color = ShiftTheme.colors.textInvert,
+                    color = ShiftTheme.colors.textPrimary,
                     textStyle = TextStyle.BUTTON
                 )
             }

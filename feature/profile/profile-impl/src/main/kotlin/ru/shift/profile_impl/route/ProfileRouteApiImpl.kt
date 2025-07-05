@@ -9,14 +9,14 @@ import ru.shift.profile_api.route.ProfileRouteApi
 import ru.shift.profile_impl.screen.controller.ProfileMainScreenController
 import javax.inject.Inject
 
-class ProfileRouteApiImpl @Inject constructor(): ProfileRouteApi {
+class ProfileRouteApiImpl @Inject constructor() : ProfileRouteApi {
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
         navController: NavController,
         modifier: Modifier
     ) {
         navGraphBuilder.navigation<ProfileRouteApi.Screen.BASE>(
-            startDestination = ProfileRouteApi.Screen.ProfileMain
+            startDestination = ProfileRouteApi.Screen.ProfileMain,
         ) {
             composable<ProfileRouteApi.Screen.ProfileMain> {
                 ProfileMainScreenController(
