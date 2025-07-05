@@ -11,6 +11,7 @@ import ru.shift.authorization_impl.screen.login.controller.viewmodel.AuthLoginSc
 import ru.shift.authorization_impl.screen.login.topbar.AuthLoginScreenTopBar
 import ru.shift.authorization_impl.screen.login.ui.AuthLoginScreen
 import ru.shift.authorization_impl.screen.login.ui.SendCodeScreen
+import ru.shift.auto_api.route.AutoRouteApi
 import ru.shiftsummer2025.design_system.component.scaffold.ShiftScaffold
 
 @Composable
@@ -49,7 +50,7 @@ fun AuthLoginScreenController(
                 modifier = Modifier.padding(top = paddingValues.calculateTopPadding()),
                 onLoginClick = {
                     viewModel.login {
-
+                        navController.navigate(AutoRouteApi.Screen.BASE)
                     }
                 },
                 isLoginButtonEnable = state.value.isLoginButtonEnable,

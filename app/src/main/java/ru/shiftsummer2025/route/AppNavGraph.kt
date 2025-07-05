@@ -29,8 +29,8 @@ fun AppNavGraph(
 
     NavHost(
         navController = navHostController,
-        startDestination = AutoRouteApi.Screen.BASE,
-//        startDestination = AuthorizationRouteApi.Screen.BASE
+//        startDestination = AutoRouteApi.Screen.BASE,
+        startDestination = AuthorizationRouteApi.Screen.BASE
     ) {
         routes.forEach { routeKClass ->
             registerFeatureGraph(
