@@ -27,7 +27,6 @@ class AutoMainScreenViewModel @Inject constructor(
 
             autoResult
                 .onStart {
-                    Log.d("AutoMainScreenViewModel", "loadCars started")
                     _autoMainState.value = AutoMainScreenState.Loading
                 }
                 .collect { result ->
@@ -38,7 +37,6 @@ class AutoMainScreenViewModel @Inject constructor(
                         )
                     }
                     is Result.Success -> {
-                        Log.d("AutoMainScreenViewModel", "Success: ${result.data}")
                         _autoMainState.value = AutoMainScreenState.Success(
                             cars = result.data
                         )

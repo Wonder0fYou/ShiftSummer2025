@@ -2,6 +2,7 @@ package ru.shiftsummer2025.bottombar.model
 
 import androidx.annotation.DrawableRes
 import ru.shift.auto_api.route.AutoRouteApi
+import ru.shift.profile_api.route.ProfileRouteApi
 import ru.shiftsummer2025.design_system.R
 import ru.shiftsummer2025.feature_api.route.ScreenApi
 
@@ -32,7 +33,7 @@ sealed class BottomBarNavigationItem(
 
     data class Profile(
         override val label: String = "Профиль",
-        override val route: ScreenApi,
+        override val route: ScreenApi = ProfileRouteApi.Screen.BASE,
         override val iconRes: Int = R.drawable.ic_profile
     ) : BottomBarNavigationItem(
         label = label,
@@ -45,7 +46,7 @@ sealed class BottomBarNavigationItem(
             return listOf(
                 Auto(),
 //                Orders(),
-//                Profile(),
+                Profile(),
             )
         }
     }

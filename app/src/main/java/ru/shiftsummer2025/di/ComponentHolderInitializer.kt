@@ -2,6 +2,7 @@ package ru.shiftsummer2025.di
 
 import ru.shiftsummer2025.di.featuremodules.authorization.AuthorizationFeatureComponentInitializer
 import ru.shiftsummer2025.di.featuremodules.auto.AutoFeatureComponentInitializer
+import ru.shiftsummer2025.di.featuremodules.profile.ProfileFeatureComponentInitializer
 import ru.shiftsummer2025.di.module.data.datastore.DataStoreComponentInitializer
 import ru.shiftsummer2025.di.module.data.remote.RemoteDataComponentInitializer
 import javax.inject.Inject
@@ -11,6 +12,7 @@ class ComponentHolderInitializer @Inject constructor(
     private val authorizationFeatureComponentInitializer: AuthorizationFeatureComponentInitializer,
     private val dataStoreComponentInitializer: DataStoreComponentInitializer,
     private val autoFeatureComponentInitializer: AutoFeatureComponentInitializer,
+    private val profileFeatureComponentInitializer: ProfileFeatureComponentInitializer
 ) {
     fun init() {
         initCoreData()
@@ -25,5 +27,6 @@ class ComponentHolderInitializer @Inject constructor(
     private fun initFeatures() {
         authorizationFeatureComponentInitializer.init()
         autoFeatureComponentInitializer.init()
+        profileFeatureComponentInitializer.init()
     }
 }
