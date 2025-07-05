@@ -1,6 +1,7 @@
 package ru.shiftsummer2025.bottombar.model
 
 import androidx.annotation.DrawableRes
+import ru.shift.auto_api.route.AutoRouteApi
 import ru.shiftsummer2025.design_system.R
 import ru.shiftsummer2025.feature_api.route.ScreenApi
 
@@ -11,7 +12,7 @@ sealed class BottomBarNavigationItem(
 ) {
     data class Auto(
         override val label: String = "Авто",
-        override val route: ScreenApi,
+        override val route: ScreenApi = AutoRouteApi.Screen.BASE,
         override val iconRes: Int = R.drawable.ic_auto
     ) : BottomBarNavigationItem(
         label = label,
@@ -42,7 +43,7 @@ sealed class BottomBarNavigationItem(
     companion object {
         fun values(): List<BottomBarNavigationItem> {
             return listOf(
-//                Auto(),
+                Auto(),
 //                Orders(),
 //                Profile(),
             )

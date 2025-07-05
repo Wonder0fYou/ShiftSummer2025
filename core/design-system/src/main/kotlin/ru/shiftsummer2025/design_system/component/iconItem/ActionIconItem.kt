@@ -17,3 +17,9 @@ fun crossButtonActionItem(onClick: () -> Unit) = ActionIconItem(
     onClick = onClick,
     contentDescription = "Cross",
 )
+
+fun calendarButtonActionItem(onClick: () -> Unit) = ActionIconItem(
+    iconRes = R.drawable.ic_calendar,
+    onClick = onClick,
+    contentDescription = "Calendar"
+)

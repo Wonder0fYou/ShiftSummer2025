@@ -35,6 +35,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:auto:auto-api"))
+
     implementation(project(":data:otps"))
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))

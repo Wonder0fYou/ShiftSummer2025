@@ -36,4 +36,9 @@ include(":feature:authorization:authorization-api")
 include(":feature:authorization:authorization-data")
 include(":feature:authorization:authorization-domain")
 include(":feature:authorization:authorization-impl")
+
+include(":feature:auto:auto-api")
+include(":feature:auto:auto-data")
+include(":feature:auto:auto-domain")
+include(":feature:auto:auto-impl")
  

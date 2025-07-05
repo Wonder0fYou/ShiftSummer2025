@@ -10,7 +10,8 @@ import androidx.compose.ui.unit.sp
 data class ShiftTypography(
     val title_h2: TextStyle,
     val button: TextStyle,
-    val body_regular_16: TextStyle
+    val body_regular_16: TextStyle,
+    val body_regular_14: TextStyle,
 )
 
 val ShiftTypographySet = ShiftTypography(
@@ -31,5 +32,11 @@ val ShiftTypographySet = ShiftTypography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp
+    ),
+    body_regular_14 = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp,
+        lineHeight = 20.sp
     )
 )

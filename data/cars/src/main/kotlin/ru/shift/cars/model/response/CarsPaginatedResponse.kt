@@ -7,5 +7,5 @@ data class CarsPaginatedResponse(
     val success: Boolean,
     val reason: String?,
     val data: List<CarsDto>,
-    val meta: List<PaginationMetaDto>
+    val meta: PaginationMetaDto
 )

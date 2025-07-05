@@ -67,6 +67,11 @@ dependencies {
     implementation(project(":feature:authorization:authorization-domain"))
     implementation(project(":feature:authorization:authorization-impl"))
 
+    implementation(project(":feature:auto:auto-api"))
+    implementation(project(":feature:auto:auto-data"))
+    implementation(project(":feature:auto:auto-domain"))
+    implementation(project(":feature:auto:auto-impl"))
+
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 

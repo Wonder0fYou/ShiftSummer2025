@@ -13,6 +13,7 @@ enum class TextStyle {
     TITLE_H2,
     BUTTON,
     BODY_REGULAR_16,
+    BODY_REGULAR_14
 }
 
 @Composable
@@ -59,6 +60,18 @@ fun ShiftText(
                 maxLines = maxLines,
                 overflow = overflow,
                 style = ShiftTheme.typography.body_regular_16
+            )
+        }
+
+        TextStyle.BODY_REGULAR_14 -> {
+            Text(
+                text = text,
+                modifier = modifier,
+                color = color,
+                textAlign = textAlign,
+                maxLines = maxLines,
+                overflow = overflow,
+                style = ShiftTheme.typography.body_regular_14
             )
         }
     }
