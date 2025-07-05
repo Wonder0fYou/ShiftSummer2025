@@ -41,6 +41,8 @@ dependencies {
     implementation(project(":core:design-system"))
     implementation(project(":core:feature-api"))
 
+    implementation(project(":feature:profile:profile-api"))
+
     implementation(libs.androidx.navigation.compose)
 
     implementation(libs.dagger)
