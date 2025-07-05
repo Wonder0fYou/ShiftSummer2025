@@ -35,10 +35,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:authorization"))
 
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))
     implementation(project(":core:feature-api"))
+
+    implementation(project(":feature:profile:profile-api"))
+    implementation(project(":feature:profile:profile-domain"))
 
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
