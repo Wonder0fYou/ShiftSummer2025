@@ -41,4 +41,9 @@ include(":feature:auto:auto-api")
 include(":feature:auto:auto-data")
 include(":feature:auto:auto-domain")
 include(":feature:auto:auto-impl")
+
+include(":feature:profile:profile-api")
+include(":feature:profile:profile-data")
+include(":feature:profile:profile-domain")
+include(":feature:profile:profile-impl")
  
