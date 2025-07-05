@@ -2,5 +2,5 @@ package ru.shift.auto_domain
 
 data class CarsPaginated(
     val data: List<Cars>,
-    val meta: List<PaginationMeta>
+    val meta: PaginationMeta
 )

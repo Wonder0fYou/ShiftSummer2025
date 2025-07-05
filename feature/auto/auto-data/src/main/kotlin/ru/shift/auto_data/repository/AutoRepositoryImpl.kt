@@ -1,5 +1,6 @@
 package ru.shift.auto_data.repository
 
+import com.skydoves.sandwich.message
 import com.skydoves.sandwich.suspendOnError
 import com.skydoves.sandwich.suspendOnSuccess
 import kotlinx.coroutines.flow.Flow
@@ -27,7 +28,8 @@ class AutoRepositoryImpl @Inject constructor(
                 emit(Result.Error(error))
             }
         }.suspendOnError {
-
+            val error = ReasonError(reason = this.message())
+            emit(Result.Error(error))
         }
     }
 }

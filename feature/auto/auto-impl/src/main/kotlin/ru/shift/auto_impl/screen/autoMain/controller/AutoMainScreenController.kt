@@ -19,6 +19,8 @@ import ru.shift.auto_impl.screen.autoMain.topbar.AutoMainScreenTopBar
 import ru.shift.auto_impl.screen.autoMain.ui.AutoMainScreen
 import ru.shiftsummer2025.design_system.component.circularProgressIndicator.ShiftCircularProgressIndicator
 import ru.shiftsummer2025.design_system.component.scaffold.ShiftScaffold
+import ru.shiftsummer2025.design_system.component.text.ShiftText
+import ru.shiftsummer2025.design_system.component.text.TextStyle
 
 @Composable
 fun AutoMainScreenController(
@@ -43,23 +45,38 @@ fun AutoMainScreenController(
             )
         }
     ) { paddingValues ->
-        if (state.value == AutoMainScreenState.Loading) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                ShiftCircularProgressIndicator(
-                    modifier = Modifier.size(48.dp)
+        when(val currentState = state.value) {
+            is AutoMainScreenState.Error -> {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    ShiftText(
+                        text = currentState.reason,
+                        textStyle = TextStyle.TITLE_H2,
+                    )
+                }
+            }
+            AutoMainScreenState.Loading -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    ShiftCircularProgressIndicator(
+                        modifier = Modifier.size(48.dp)
+                    )
+                }
+            }
+            is AutoMainScreenState.Success -> {
+                AutoMainScreen(
+                    modifier = Modifier.padding(top = paddingValues.calculateTopPadding()),
+                    onFiltersClick = {
+
+                    },
+                    cars = currentState.cars.data
                 )
             }
-        } else {
-            AutoMainScreen(
-                modifier = Modifier.padding(top = paddingValues.calculateTopPadding()),
-                onFiltersClick = {
-
-                }
-            )
         }
     }
 }

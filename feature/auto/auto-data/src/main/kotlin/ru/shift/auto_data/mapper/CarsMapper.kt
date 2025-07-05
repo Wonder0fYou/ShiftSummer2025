@@ -48,13 +48,11 @@ class CarsMapper @Inject constructor(
             )
         }
 
-    private fun mapToPaginationMeta(pagMeta: List<PaginationMetaDto>): List<PaginationMeta> =
-        pagMeta.map { paginationMetaDto ->
-            PaginationMeta(
-                total = paginationMetaDto.total,
-                page = paginationMetaDto.page,
-                limit = paginationMetaDto.limit,
-                totalPages = paginationMetaDto.totalPages,
-            )
-        }
+    private fun mapToPaginationMeta(pagMeta: PaginationMetaDto): PaginationMeta =
+        PaginationMeta(
+            total = pagMeta.total,
+            page = pagMeta.page,
+            limit = pagMeta.limit,
+            totalPages = pagMeta.totalPages,
+        )
 }
