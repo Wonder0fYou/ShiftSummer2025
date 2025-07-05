@@ -12,6 +12,7 @@ import ru.shift.profile_impl.di.ProfileImplDependencies
 import ru.shift.profile_impl.route.ProfileRouteApiImpl
 import ru.shift.remote.api.BaseNetworkApi
 import ru.shiftsummer2025.di.route.RouteApiKey
+import ru.shiftsummer2025.feature_api.route.RouteApi
 
 @Module(
     includes = [ProfileFeatureModule.Binder::class]
@@ -38,6 +39,6 @@ class ProfileFeatureModule {
         @IntoMap
         @RouteApiKey(value = ProfileRouteApi::class)
         @Binds
-        fun bindProfileRouteApi(impl: ProfileRouteApiImpl): ProfileRouteApi
+        fun bindProfileRouteApi(impl: ProfileRouteApiImpl): RouteApi
     }
 }
