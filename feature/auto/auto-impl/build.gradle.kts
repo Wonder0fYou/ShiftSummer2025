@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:feature-api"))
 
     implementation(project(":feature:auto:auto-api"))
+    implementation(project(":feature:auto:auto-domain"))
 
     implementation(libs.androidx.navigation.compose)
 

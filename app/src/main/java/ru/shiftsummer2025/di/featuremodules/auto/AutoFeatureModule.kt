@@ -12,6 +12,7 @@ import ru.shift.auto_impl.di.AutoImplDependencies
 import ru.shift.auto_impl.route.AutoRouteApiImpl
 import ru.shift.remote.api.BaseNetworkApi
 import ru.shiftsummer2025.di.route.RouteApiKey
+import ru.shiftsummer2025.feature_api.route.RouteApi
 
 @Module(
     includes = [AutoFeatureModule.Binder::class]
@@ -39,6 +40,6 @@ class AutoFeatureModule {
         @IntoMap
         @RouteApiKey(value = AutoRouteApi::class)
         @Binds
-        fun bindAutoRouteApi(impl: AutoRouteApiImpl): AutoRouteApi
+        fun bindAutoRouteApi(impl: AutoRouteApiImpl): RouteApi
     }
 }
