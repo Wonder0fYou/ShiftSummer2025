@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":data:cars"))
+    api(project(":data:cars"))
 
     implementation(project(":core:di"))
     implementation(project(":core:data:remote"))

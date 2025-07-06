@@ -10,6 +10,7 @@ import ru.shift.cars.model.CarsDto
 import ru.shift.cars.model.MediaCarsDto
 import ru.shift.cars.model.PaginationMetaDto
 import ru.shift.cars.model.response.CarsPaginatedResponse
+import ru.shift.remote.di.RemoteModule.Companion.BASE_URL_FOR_PICTURE
 import javax.inject.Inject
 
 class CarsMapper @Inject constructor(
@@ -43,7 +44,7 @@ class CarsMapper @Inject constructor(
     private fun mapToMediaCars(carsMedia: List<MediaCarsDto>): List<MediaCars> =
         carsMedia.map { mediaCarsDto ->
             MediaCars(
-                url = mediaCarsDto.url,
+                url = BASE_URL_FOR_PICTURE + mediaCarsDto.url,
                 isCover = mediaCarsDto.isCover,
             )
         }

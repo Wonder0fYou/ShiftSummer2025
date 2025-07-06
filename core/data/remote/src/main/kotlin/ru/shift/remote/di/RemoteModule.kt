@@ -54,5 +54,6 @@ class RemoteModule {
 
     companion object {
         private const val BASE_URL = "https://shift-intensive.ru/"
+        const val BASE_URL_FOR_PICTURE = "https://shift-intensive.ru/api"
     }
 }

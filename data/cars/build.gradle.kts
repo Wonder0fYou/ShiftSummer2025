@@ -14,7 +14,7 @@ kotlin {
 
 dependencies {
     implementation(project(":core:di"))
-    implementation(project(":core:data:remote"))
+    api(project(":core:data:remote"))
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
