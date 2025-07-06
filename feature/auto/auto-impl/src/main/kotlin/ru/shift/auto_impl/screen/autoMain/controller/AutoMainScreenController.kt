@@ -17,6 +17,8 @@ import ru.shift.auto_impl.screen.autoMain.controller.state.AutoMainScreenState
 import ru.shift.auto_impl.screen.autoMain.controller.viewmodel.AutoMainScreenViewModel
 import ru.shift.auto_impl.screen.autoMain.topbar.AutoMainScreenTopBar
 import ru.shift.auto_impl.screen.autoMain.ui.AutoMainScreen
+import ru.shiftsummer2025.design_system.component.ErrorState
+import ru.shiftsummer2025.design_system.component.LoadingState
 import ru.shiftsummer2025.design_system.component.circularProgressIndicator.ShiftCircularProgressIndicator
 import ru.shiftsummer2025.design_system.component.scaffold.ShiftScaffold
 import ru.shiftsummer2025.design_system.component.text.ShiftText
@@ -45,26 +47,12 @@ fun AutoMainScreenController(
     ) { paddingValues ->
         when(val currentState = state.value) {
             is AutoMainScreenState.Error -> {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    ShiftText(
-                        text = currentState.reason,
-                        textStyle = TextStyle.TITLE_H2,
-                    )
-                }
+                ErrorState(
+                    reason = currentState.reason
+                )
             }
             AutoMainScreenState.Loading -> {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    ShiftCircularProgressIndicator(
-                        modifier = Modifier.size(48.dp)
-                    )
-                }
+                LoadingState()
             }
             is AutoMainScreenState.Success -> {
                 AutoMainScreen(
