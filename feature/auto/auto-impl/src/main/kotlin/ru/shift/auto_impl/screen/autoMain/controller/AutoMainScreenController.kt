@@ -40,9 +40,7 @@ fun AutoMainScreenController(
     ShiftScaffold(
         modifier = modifier,
         topBar = {
-            AutoMainScreenTopBar(
-                onNavigationClick = {}
-            )
+            AutoMainScreenTopBar()
         }
     ) { paddingValues ->
         when(val currentState = state.value) {
