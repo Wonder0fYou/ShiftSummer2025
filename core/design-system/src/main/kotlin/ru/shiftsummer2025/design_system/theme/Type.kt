@@ -12,6 +12,8 @@ data class ShiftTypography(
     val button: TextStyle,
     val body_regular_16: TextStyle,
     val body_regular_14: TextStyle,
+    val paragraph_16: TextStyle,
+    val paragraph_12: TextStyle,
 )
 
 val ShiftTypographySet = ShiftTypography(
@@ -36,6 +38,18 @@ val ShiftTypographySet = ShiftTypography(
     body_regular_14 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Bold,
+        fontSize = 16.sp,
+        lineHeight = 20.sp
+    ),
+    paragraph_16 = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.W500,
+        fontSize = 24.sp,
+        lineHeight = 20.sp
+    ),
+    paragraph_12 = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.W400,
         fontSize = 16.sp,
         lineHeight = 20.sp
     )

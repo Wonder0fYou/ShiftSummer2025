@@ -4,8 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ru.shift.authorization_api.repository.AuthorizationRepository
@@ -64,20 +62,15 @@ class AuthLoginScreenViewModel @Inject constructor(
     }
 
     fun onPhoneChanged(phone: String) {
-        _authLoginScreenState.update {
-            it.copy(
-                phone = phone,
-                isSendCodeButtonEnabled = true
-            )
-        }
+        _authLoginScreenState.value =
+            _authLoginScreenState.value.copy(phone = phone, isSendCodeButtonEnabled = true)
     }
 
     fun onOtpCodeChanged(code: String) {
-        _authLoginScreenState.update {
-            it.copy(
+        _authLoginScreenState.value =
+            _authLoginScreenState.value.copy(
                 code = code,
                 isLoginButtonEnable = true
             )
-        }
     }
 }

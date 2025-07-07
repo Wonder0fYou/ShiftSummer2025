@@ -2,7 +2,6 @@ package ru.shiftsummer2025.design_system.component.text
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Stable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
@@ -13,7 +12,9 @@ enum class TextStyle {
     TITLE_H2,
     BUTTON,
     BODY_REGULAR_16,
-    BODY_REGULAR_14
+    BODY_REGULAR_14,
+    PARAGRAPH_16,
+    PARAGRAPH_12,
 }
 
 @Composable
@@ -72,6 +73,30 @@ fun ShiftText(
                 maxLines = maxLines,
                 overflow = overflow,
                 style = ShiftTheme.typography.body_regular_14
+            )
+        }
+
+        TextStyle.PARAGRAPH_16 -> {
+            Text(
+                text = text,
+                modifier = modifier,
+                color = color,
+                textAlign = textAlign,
+                maxLines = maxLines,
+                overflow = overflow,
+                style = ShiftTheme.typography.paragraph_16
+            )
+        }
+
+        TextStyle.PARAGRAPH_12 -> {
+            Text(
+                text = text,
+                modifier = modifier,
+                color = color,
+                textAlign = textAlign,
+                maxLines = maxLines,
+                overflow = overflow,
+                style = ShiftTheme.typography.paragraph_12
             )
         }
     }

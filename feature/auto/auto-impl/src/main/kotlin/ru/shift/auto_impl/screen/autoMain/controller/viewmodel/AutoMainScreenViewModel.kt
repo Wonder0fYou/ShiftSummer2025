@@ -9,8 +9,10 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import ru.shift.auto_api.repository.AutoRepository
+import ru.shift.auto_api.route.AutoRouteApi
 import ru.shift.auto_impl.screen.autoMain.controller.state.AutoMainScreenState
 import ru.shiftsummer2025.feature_api.result.Result
+import ru.shiftsummer2025.feature_api.route.ScreenApi
 import javax.inject.Inject
 
 class AutoMainScreenViewModel @Inject constructor(

@@ -33,7 +33,7 @@ interface CarsRemoteApi : BaseRemoteApi {
 
     @GET("$API_CARS/info/{carId}")
     suspend fun getCar(
-        @Path("carId") carId: Int
+        @Path("carId") carId: String
     ): ApiResponse<CarResponse>
 
     @POST("${API_CARS}/rent")
