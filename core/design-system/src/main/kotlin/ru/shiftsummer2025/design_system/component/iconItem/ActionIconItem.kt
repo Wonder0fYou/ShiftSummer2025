@@ -23,3 +23,9 @@ fun calendarButtonActionItem(onClick: () -> Unit) = ActionIconItem(
     onClick = onClick,
     contentDescription = "Calendar"
 )
+
+fun shevronButtonActionItem(onClick: () -> Unit) = ActionIconItem(
+    iconRes = R.drawable.ic_shevron,
+    onClick = onClick,
+    contentDescription = "shevron"
+)
