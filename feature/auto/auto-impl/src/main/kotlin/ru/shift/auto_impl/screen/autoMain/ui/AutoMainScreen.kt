@@ -21,6 +21,7 @@ fun AutoMainScreen(
     modifier: Modifier = Modifier,
     cars: List<Cars>,
     onFiltersClick: () -> Unit,
+    onCarClick: (Cars) -> Unit,
 ) {
     ShiftSurface(
         modifier = modifier
@@ -68,7 +69,7 @@ fun AutoMainScreen(
                     modifier = Modifier
                         .padding(bottom = 16.dp)
                         .clickable {
-
+                            onCarClick(car)
                         },
                     urlImage = mediaCars,
                     autoName = car.name,

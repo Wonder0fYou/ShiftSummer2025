@@ -5,8 +5,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import androidx.navigation.toRoute
 import ru.shift.auto_api.route.AutoRouteApi
 import ru.shift.auto_impl.screen.autoMain.controller.AutoMainScreenController
+import ru.shift.auto_impl.screen.currentCar.controller.CurrentCarScreenController
 import javax.inject.Inject
 
 class AutoRouteApiImpl @Inject constructor() : AutoRouteApi {
@@ -22,6 +24,15 @@ class AutoRouteApiImpl @Inject constructor() : AutoRouteApi {
                 AutoMainScreenController(
                     modifier = modifier,
                     navController = navController
+                )
+            }
+
+            composable<AutoRouteApi.Screen.CurrentCar> {
+                val screenArgs = it.toRoute<AutoRouteApi.Screen.CurrentCar>()
+                CurrentCarScreenController(
+                    modifier = modifier,
+                    navController = navController,
+                    screenArgs = screenArgs
                 )
             }
         }

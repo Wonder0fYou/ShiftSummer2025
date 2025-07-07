@@ -13,5 +13,10 @@ interface AutoRouteApi : RouteApi {
 
         @Serializable
         data object AutoMain : Screen
+
+        @Serializable
+        data class CurrentCar(
+            val carId: String
+        ): Screen
     }
 }
