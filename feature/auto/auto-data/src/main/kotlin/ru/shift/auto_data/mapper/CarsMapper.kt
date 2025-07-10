@@ -2,15 +2,18 @@ package ru.shift.auto_data.mapper
 
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.mappers.ApiSuccessModelMapper
+import ru.shift.auto_domain.CarRent
 import ru.shift.auto_domain.CarWithRents
 import ru.shift.auto_domain.Cars
 import ru.shift.auto_domain.CarsPaginated
 import ru.shift.auto_domain.MediaCars
 import ru.shift.auto_domain.PaginationMeta
+import ru.shift.cars.model.CarDto
 import ru.shift.cars.model.CarWithRentsDto
 import ru.shift.cars.model.CarsDto
 import ru.shift.cars.model.MediaCarsDto
 import ru.shift.cars.model.PaginationMetaDto
+import ru.shift.cars.model.response.CarRentResponse
 import ru.shift.cars.model.response.CarsPaginatedResponse
 import ru.shift.remote.di.RemoteModule.Companion.BASE_URL_FOR_PICTURE
 import javax.inject.Inject
@@ -39,6 +42,43 @@ class CarsMapper @Inject constructor(
             location = carWithRentsDto.location,
             color = carWithRentsDto.color,
             steering = carWithRentsDto.steering
+        )
+
+    fun mapToCarRent(carRentResponse: CarRentResponse): CarRent {
+        val carInfoRent = carRentResponse.rent
+        val carRent = CarRent(
+            success = carInfoRent.success,
+            reason = carInfoRent.reason,
+            carInfo = mapToCar(carInfoRent.carInfo),
+            status = carInfoRent.status,
+            pickupLocation = carInfoRent.pickupLocation,
+            returnLocation = carInfoRent.returnLocation,
+            startDate = carInfoRent.startDate,
+            endDate = carInfoRent.endDate,
+            totalPrice = carInfoRent.totalPrice,
+            firstName = carInfoRent.firstName,
+            lastName = carInfoRent.lastName,
+            middleName = carInfoRent.middleName,
+            birthDate = carInfoRent.birthDate,
+            email = carInfoRent.email,
+            phone = carInfoRent.phone,
+            comment = carInfoRent.comment
+        )
+        return carRent
+    }
+
+    private fun mapToCar(carsDto: CarDto): Cars =
+        Cars(
+            id = carsDto.id,
+            name = carsDto.name,
+            brand = carsDto.brand,
+            media = mapToMediaCars(carsDto.media),
+            transmission = carsDto.transmission,
+            price = carsDto.price,
+            location = carsDto.location,
+            color = carsDto.color,
+            bodyType = carsDto.bodyType,
+            steering = carsDto.steering
         )
 
     private fun mapToCars(carsDto: List<CarsDto>): List<Cars> =
