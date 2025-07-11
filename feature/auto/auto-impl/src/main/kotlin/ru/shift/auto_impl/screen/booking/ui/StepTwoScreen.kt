@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import ru.shift.auto_impl.screen.booking.controller.state.BookingData
 import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
-import ru.shiftsummer2025.design_system.component.input.UiSingleLineInput
+import ru.shiftsummer2025.design_system.component.input.ShiftSingleLineInput
 import ru.shiftsummer2025.design_system.component.surface.ShiftSurface
 
 @Composable
@@ -31,7 +31,7 @@ fun StepTwoScreen(
     ) {
         LazyColumn {
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(vertical = 16.dp),
                     text = bookingData.lastName ?: "",
                     labelText = "Фамилия",
@@ -40,7 +40,7 @@ fun StepTwoScreen(
                 )
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(bottom = 16.dp),
                     text = bookingData.firstName ?: "",
                     labelText = "Имя",
@@ -49,7 +49,7 @@ fun StepTwoScreen(
                 )
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(bottom = 16.dp),
                     text = bookingData.middleName ?: "",
                     labelText = "Отчество",
@@ -58,7 +58,7 @@ fun StepTwoScreen(
                 )
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(bottom = 16.dp),
                     text = bookingData.birthDate ?: "",
                     labelText = "Дата рождения",
@@ -67,7 +67,7 @@ fun StepTwoScreen(
                 )
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(bottom = 16.dp),
                     text = bookingData.phone ?: "",
                     labelText = "Номер телефона",
@@ -76,7 +76,7 @@ fun StepTwoScreen(
                 )
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(bottom = 16.dp),
                     text = bookingData.email ?: "",
                     labelText = "Электронная почта",
@@ -85,7 +85,7 @@ fun StepTwoScreen(
                 )
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier.padding(bottom = 16.dp),
                     text = bookingData.comment ?: "",
                     labelText = "Комментарий",

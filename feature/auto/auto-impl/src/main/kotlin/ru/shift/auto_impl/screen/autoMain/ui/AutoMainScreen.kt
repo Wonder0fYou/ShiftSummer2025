@@ -13,7 +13,7 @@ import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.card.ShiftCarMainCard
 import ru.shiftsummer2025.design_system.component.iconItem.calendarButtonActionItem
-import ru.shiftsummer2025.design_system.component.input.UiSingleLineInput
+import ru.shiftsummer2025.design_system.component.input.ShiftSingleLineInput
 import ru.shiftsummer2025.design_system.component.surface.ShiftSurface
 
 @Composable
@@ -29,7 +29,7 @@ fun AutoMainScreen(
     ) {
         LazyColumn {
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier
                         .padding(
                             top = 16.dp,
@@ -43,7 +43,7 @@ fun AutoMainScreen(
                 }
             }
             item {
-                UiSingleLineInput(
+                ShiftSingleLineInput(
                     modifier = Modifier
                         .padding(bottom = 16.dp),
                     text = "",

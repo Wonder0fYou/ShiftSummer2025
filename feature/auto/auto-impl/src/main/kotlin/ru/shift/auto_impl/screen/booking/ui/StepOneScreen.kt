@@ -11,7 +11,7 @@ import ru.shift.auto_impl.screen.booking.controller.state.BookingData
 import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.iconItem.calendarButtonActionItem
-import ru.shiftsummer2025.design_system.component.input.UiSingleLineInput
+import ru.shiftsummer2025.design_system.component.input.ShiftSingleLineInput
 import ru.shiftsummer2025.design_system.component.surface.ShiftSurface
 
 @Composable
@@ -27,7 +27,7 @@ fun StepOneScreen(
             .fillMaxSize(),
     ) {
         Column {
-            UiSingleLineInput(
+            ShiftSingleLineInput(
                 modifier = Modifier.padding(vertical = 16.dp),
                 text = "",
                 labelText = "Даты аренды",
@@ -36,14 +36,14 @@ fun StepOneScreen(
             ) {
 
             }
-            UiSingleLineInput(
+            ShiftSingleLineInput(
                 modifier = Modifier.padding(bottom = 16.dp),
                 text = bookingData.pickupLocation ?: "",
                 labelText = "Место получения",
                 placeholderText = "Место получения",
                 onTextChange = onPickupLocationChanged
             )
-            UiSingleLineInput(
+            ShiftSingleLineInput(
                 modifier = Modifier.padding(bottom = 16.dp),
                 text = bookingData.returnLocation ?: "",
                 labelText = "Место возврата",
