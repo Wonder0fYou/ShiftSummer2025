@@ -6,7 +6,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ru.shiftsummer2025.design_system.component.button.UiButton
+import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.surface.ShiftSurface
 
@@ -21,7 +21,7 @@ fun StepThreeScreen(
     ) {
         LazyColumn {
             item {
-                UiButton(
+                ShiftButton(
                     modifier = Modifier.padding(bottom = 16.dp),
                     textInButton = "Оформить",
                     style = UiButtonStyle.PRIMARY,

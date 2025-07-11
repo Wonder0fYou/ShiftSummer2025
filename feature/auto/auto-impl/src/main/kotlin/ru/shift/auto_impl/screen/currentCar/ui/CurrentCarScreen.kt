@@ -13,8 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import ru.shift.auto_domain.CarWithRents
-import ru.shift.auto_domain.Cars
-import ru.shiftsummer2025.design_system.component.button.UiButton
+import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.divider.ShiftDivider
 import ru.shiftsummer2025.design_system.component.text.ShiftText
@@ -229,7 +228,7 @@ fun CurrentCarScreen(
             )
         }
         item {
-            UiButton(
+            ShiftButton(
                 modifier = Modifier
                     .padding(bottom = 8.dp),
                 textInButton = "Назад",
@@ -238,7 +237,7 @@ fun CurrentCarScreen(
             )
         }
         item {
-            UiButton(
+            ShiftButton(
                 modifier = Modifier
                     .padding(bottom = 16.dp),
                 textInButton = "Забронировать",

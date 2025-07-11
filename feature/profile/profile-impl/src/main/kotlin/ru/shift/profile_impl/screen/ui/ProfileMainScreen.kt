@@ -6,8 +6,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ru.shift.profile_impl.screen.controller.state.ProfileMainScreenState
-import ru.shiftsummer2025.design_system.component.button.UiButton
+import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.input.UiSingleLineInput
 import ru.shiftsummer2025.design_system.component.surface.ShiftSurface
@@ -99,7 +98,7 @@ fun ProfileMainScreen(
                 }
             }
             item {
-                UiButton(
+                ShiftButton(
                     modifier = Modifier
                         .padding(
                             bottom = 8.dp,
@@ -111,7 +110,7 @@ fun ProfileMainScreen(
                 )
             }
             item {
-                UiButton(
+                ShiftButton(
                     modifier = Modifier
                         .padding(bottom = 16.dp),
                     textInButton = "Выйти",

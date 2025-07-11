@@ -29,7 +29,7 @@ enum class UiButtonStyle {
 }
 
 @Composable
-fun UiButton(
+fun ShiftButton(
     modifier: Modifier = Modifier,
     textInButton: String,
     style: UiButtonStyle,
