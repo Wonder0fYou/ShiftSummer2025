@@ -56,6 +56,10 @@ fun CurrentCarScreenController(
                     car = currentState.cars,
                     onBackClick = {
                         navController.popBackStack()
+                    },
+                    onOrderClick = { carId ->
+                        val route = AutoRouteApi.Screen.BookingCar(carId = carId)
+                        navController.navigate(route)
                     }
                 )
             }

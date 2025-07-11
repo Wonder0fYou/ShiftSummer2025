@@ -13,6 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import ru.shift.auto_domain.CarWithRents
+import ru.shift.auto_domain.Cars
 import ru.shiftsummer2025.design_system.component.button.UiButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.divider.ShiftDivider
@@ -24,6 +25,7 @@ fun CurrentCarScreen(
     modifier: Modifier = Modifier,
     car: CarWithRents,
     onBackClick: () -> Unit,
+    onOrderClick: (String) -> Unit,
 ) {
     LazyColumn(
         modifier = modifier
@@ -241,7 +243,7 @@ fun CurrentCarScreen(
                     .padding(bottom = 16.dp),
                 textInButton = "Забронировать",
                 style = UiButtonStyle.PRIMARY,
-                onClick = { /*TODO*/ }
+                onClick = { onOrderClick(car.id) }
             )
         }
     }
