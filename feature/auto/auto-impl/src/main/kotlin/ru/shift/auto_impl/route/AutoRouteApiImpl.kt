@@ -8,6 +8,7 @@ import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import ru.shift.auto_api.route.AutoRouteApi
 import ru.shift.auto_impl.screen.autoMain.controller.AutoMainScreenController
+import ru.shift.auto_impl.screen.booking.controller.BookingCarScreenController
 import ru.shift.auto_impl.screen.currentCar.controller.CurrentCarScreenController
 import javax.inject.Inject
 
@@ -30,6 +31,15 @@ class AutoRouteApiImpl @Inject constructor() : AutoRouteApi {
             composable<AutoRouteApi.Screen.CurrentCar> {
                 val screenArgs = it.toRoute<AutoRouteApi.Screen.CurrentCar>()
                 CurrentCarScreenController(
+                    modifier = modifier,
+                    navController = navController,
+                    screenArgs = screenArgs
+                )
+            }
+
+            composable<AutoRouteApi.Screen.BookingCar> {
+                val screenArgs = it.toRoute<AutoRouteApi.Screen.BookingCar>()
+                BookingCarScreenController(
                     modifier = modifier,
                     navController = navController,
                     screenArgs = screenArgs

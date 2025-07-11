@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ru.shiftsummer2025.design_system.component.button.UiButton
+import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
-import ru.shiftsummer2025.design_system.component.input.UiSingleLineInput
+import ru.shiftsummer2025.design_system.component.input.ShiftSingleLineInput
 import ru.shiftsummer2025.design_system.component.surface.ShiftSurface
 import ru.shiftsummer2025.design_system.component.text.ShiftText
 import ru.shiftsummer2025.design_system.component.text.TextStyle
@@ -36,7 +36,7 @@ fun SendCodeScreen(
                 text = "Введите номер телефона для входа в личный кабинет",
                 textStyle = TextStyle.BODY_REGULAR_16
             )
-            UiSingleLineInput(
+            ShiftSingleLineInput(
                 modifier = Modifier
                     .padding(bottom = 16.dp),
                 text = phone,
@@ -44,7 +44,7 @@ fun SendCodeScreen(
             ) {
                 onEditPhoneInput(it)
             }
-            UiButton(
+            ShiftButton(
                 modifier = Modifier
                     .padding(bottom = 16.dp),
                 textInButton = "Продолжить",

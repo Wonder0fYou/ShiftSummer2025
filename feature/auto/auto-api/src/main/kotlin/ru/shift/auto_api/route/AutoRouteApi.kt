@@ -18,5 +18,10 @@ interface AutoRouteApi : RouteApi {
         data class CurrentCar(
             val carId: String
         ): Screen
+
+        @Serializable
+        data class BookingCar(
+            val carId: String
+        ): Screen
     }
 }

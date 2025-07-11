@@ -8,6 +8,7 @@ import dagger.multibindings.IntoMap
 import ru.shift.auto_api.route.AutoRouteApi
 import ru.shift.auto_impl.route.AutoRouteApiImpl
 import ru.shift.auto_impl.screen.autoMain.controller.viewmodel.AutoMainScreenViewModel
+import ru.shift.auto_impl.screen.booking.controller.viewmodel.BookingCarViewModel
 import ru.shift.auto_impl.screen.currentCar.controller.viewmodel.CurrentCarScreenViewModel
 import ru.shiftsummer2025.feature_api.factory.viewmodel.ViewModelFactory
 import ru.shiftsummer2025.feature_api.factory.viewmodel.di.ViewModelKey
@@ -20,7 +21,7 @@ class AutoImplModule {
 
     @Provides
     fun provideViewModelFactory(
-        viewModelProviders:  @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
+        viewModelProviders: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
     ): ViewModelFactory {
         return ViewModelFactory(viewModelProviders)
     }
@@ -33,6 +34,11 @@ class AutoImplModule {
 
         @[Binds IntoMap ViewModelKey(CurrentCarScreenViewModel::class)]
         fun bindCurrentCarViewModel(impl: CurrentCarScreenViewModel): ViewModel
+
+        @Binds
+        @IntoMap
+        @ViewModelKey(BookingCarViewModel::class)
+        fun bindBookingCarViewModel(impl: BookingCarViewModel): ViewModel
 
         @Binds
         fun bindAutoRoute(impl: AutoRouteApiImpl): AutoRouteApi

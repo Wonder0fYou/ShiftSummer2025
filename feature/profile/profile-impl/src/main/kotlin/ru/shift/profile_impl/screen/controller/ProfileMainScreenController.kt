@@ -25,7 +25,7 @@ import ru.shift.profile_impl.screen.controller.viewmodel.ProfileMainViewModel
 import ru.shift.profile_impl.screen.topbar.ProfileMainScreenTopBar
 import ru.shift.profile_impl.screen.ui.ProfileMainScreen
 import ru.shiftsummer2025.design_system.component.bottomSheet.ShiftBottomSheet
-import ru.shiftsummer2025.design_system.component.button.UiButton
+import ru.shiftsummer2025.design_system.component.button.ShiftButton
 import ru.shiftsummer2025.design_system.component.button.UiButtonStyle
 import ru.shiftsummer2025.design_system.component.circularProgressIndicator.ShiftCircularProgressIndicator
 import ru.shiftsummer2025.design_system.component.scaffold.ShiftScaffold
@@ -119,7 +119,7 @@ fun ProfileMainScreenController(
                     text = "Вы точно хотите выйти?",
                     textStyle = TextStyle.TITLE_H2
                 )
-                UiButton(
+                ShiftButton(
                     modifier = Modifier
                         .padding(
                             bottom = 8.dp,
@@ -131,7 +131,7 @@ fun ProfileMainScreenController(
                         showLogoutBottomSheet = false
                     }
                 )
-                UiButton(
+                ShiftButton(
                     modifier = Modifier
                         .padding(bottom = 16.dp),
                     textInButton = "Выйти",

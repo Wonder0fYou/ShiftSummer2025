@@ -21,7 +21,7 @@ import ru.shiftsummer2025.design_system.component.text.TextStyle
 import ru.shiftsummer2025.design_system.theme.ShiftTheme
 
 @Composable
-fun UiSingleLineInput(
+fun ShiftSingleLineInput(
     modifier: Modifier = Modifier,
     text: String,
     labelText: String? = null,
